@@ -3,7 +3,7 @@ set -xeuo pipefail
 
 . /etc/os-release
 
-if [[ "$ID" != "SteamOS" ]]; then
+if [[ "$ID" != "steamos" ]]; then
     echo "installer only for SteamDeck! exiting"
     exit 1
 fi
@@ -23,8 +23,9 @@ else
 fi
 
 cp ./CryptBase.dll ~/.local/share/Steam/steamapps/compatdata/1693980/pfx/drive_c/windows/system32/
+cp "$INSTALL_PATH/Data/layout.toc" ./
 cp -r ./Data "$INSTALL_PATH"
-rm -f "$INSTALL_PATH/layout.toc"
+cp ./layout.toc "$INSTALL_PATH"/Data
+#rm -f "$INSTALL_PATH/layout.toc"
 
 echo "Install finished!"
-
