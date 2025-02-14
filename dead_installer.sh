@@ -28,4 +28,8 @@ cp -r ./Data "$INSTALL_PATH"
 cp ./layout.toc "$INSTALL_PATH"/Data
 #rm -f "$INSTALL_PATH/layout.toc"
 
+rm -f ./CryptBase.dll
+rm -rf ./Data
+rm -f ./layout.toc
+
 echo "Install finished!"
