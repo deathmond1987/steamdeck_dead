@@ -23,13 +23,13 @@ else
 fi
 
 cp ./CryptBase.dll ~/.local/share/Steam/steamapps/compatdata/1693980/pfx/drive_c/windows/system32/
+cp "$INSTALL_PATH/Data/Win32/globals.toc" ./ 
 cp "$INSTALL_PATH/Data/layout.toc" ./
 cp -r ./Data "$INSTALL_PATH"
-cp ./layout.toc "$INSTALL_PATH"/Data
-#rm -f "$INSTALL_PATH/layout.toc"
+mv ./layout.toc "$INSTALL_PATH"/Data/
+#mv ./globals.toc "$INSTALL_PATH"/Data/Win32/
 
 rm -f ./CryptBase.dll
 rm -rf ./Data
-rm -f ./layout.toc
 
 echo "Install finished!"
